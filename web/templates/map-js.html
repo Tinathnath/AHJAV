@@ -1,0 +1,77 @@
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBZ0KRo0324DRLdxbI3pKq29RzN4JaqyUY"></script>
+<script type="text/javascript">
+    function initialiser() {
+        var geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(46.71109,1.7191036);//France
+        var options = {
+            center: latlng,
+            zoom: 6,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var marker;
+        var dragFunc = function(latLng){
+            carte.setCenter(latLng);
+        }
+        var carte = new google.maps.Map(document.getElementById("selectMap"), options);
+
+        google.maps.event.addListener(carte, 'click', function(event) {
+            if(marker == undefined){
+                marker = new google.maps.Marker({
+                    position: event.latLng,
+                    map: carte,
+                    draggable:true
+                });
+                google.maps.event.addListener(marker, 'dragend', function(event) {
+                    dragFunc(event.latLng);
+                });
+            }else{
+                marker.setPosition(event.latLng);
+            }
+        });
+
+        var validateBtn = document.getElementById("validateMapBtn");
+        validateBtn.addEventListener("click",function(){
+            if(marker != undefined){
+                document.getElementById("partenaire-lat").value = marker.position.lat();
+                document.getElementById("partenaire-lng").value = marker.position.lng();
+            }
+        },false);
+
+        var form = document.getElementById("form-map");
+        form.addEventListener("submit",function(){
+            event.preventDefault();
+            var input = document.getElementById("partner-map-address");
+            if(input.value != ""){
+                geocoder.geocode( { 'address': input.value}, function(results, status) {
+                    //Si l'adresse a pu être géolocalisée
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        // Récupération de sa latitude et de sa longitude
+                        var mLat = results[0].geometry.location.lat();
+                        var mLng = results[0].geometry.location.lng();
+                        document.getElementById('partenaire-lat').value = mLat;
+                        document.getElementById('partenaire-lng').value = mLng;
+                        carte.setCenter(results[0].geometry.location);
+                        var marklatlng = new google.maps.LatLng(mLat,mLng);
+                       if(marker == undefined){
+                            marker = new google.maps.Marker({
+                                position: marklatlng,
+                                map: carte,
+                                draggable:true
+                            });
+                            google.maps.event.addListener(marker, 'dragend', function(event) {
+                                dragFunc(event.latLng);
+                            });
+                        }else{
+                            marker.setPosition(marklatlng);
+                        }
+                    }
+                });
+            }
+        },false);
+    }
+</script>
+<script>
+    $(document).ready(function(){
+        initialiser();
+    });
+</script>

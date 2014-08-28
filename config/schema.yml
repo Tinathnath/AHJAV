@@ -1,0 +1,183 @@
+#Classe Vin
+Vin:
+    tableName: vin
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+        nom:
+            type: string
+            notnull: true
+        couleur:
+            type: string
+        millesime:
+            type: string
+        region:
+            type: string
+        caracteristiques:
+            type: string
+        met:
+            type: string
+        met_url:
+            type: string
+        prix:
+            type: float
+        caviste:
+            type: string
+
+#Partenaires
+Partenaire:
+    tableName: partenaire
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+        nom:
+            type: string
+            notnull: true
+        url:
+            type: string
+        promo_id:
+            type: integer
+        address:
+            type: string
+        lat:
+            type: decimal
+            scale: 10
+        lng:
+            type: decimal
+            scale: 10
+        image:
+            type: string
+    relations:
+        Promotions:
+            class: Promotion
+            local: promo_id
+            foreign: id
+            onUpdate: CASCADE
+            onDelete: CASCADE
+            type: one
+            foreignType: many
+
+#Promotion
+Promotion:
+    tableName: promotion
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+        nom:
+            type: string
+            notnull: true
+        categorie:
+            type: string
+            notnull: true
+        image:
+            type: string
+        partenaire_id:
+            type: integer
+            notnull: true
+    relations:
+        Partenaire:
+            class: Partenaire
+            local: partenaire_id
+            foreign: id
+            type: many
+            foreignType: one
+
+Sponsor:
+    tableName: sponsor
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+        nom:
+            type: string
+            notnull: true
+        logo_url:
+            type: string
+            notnull: true
+        website:
+            type: string
+
+#Anecdotes
+Anecdote:
+    tableName: anecdotes
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+        titre:
+            type: string
+            notnull: true
+        texte:
+            type: string
+            notnull: true
+
+#Questions du quizz
+Question:
+    tableName: questions
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+        theme:
+            type: string
+        question:
+            type: string
+            notnull: true
+        good_answer:
+            type: string
+            notnull: true
+        false_answer_A:
+            type: string
+            notnull: true
+        false_answer_B:
+            type: string
+            notnull: true
+        explanation:
+            type: string
+
+User:
+    tableName: users
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+        username:
+            type: string
+        passphrase:
+            type: string
+        salt:
+            type: string
+
+Actualite:
+    tableName: actus
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+        titre:
+            type: string
+        content:
+            type: string
+        actuDate:
+            type: datetime
+        image:
+            type: string

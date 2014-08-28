@@ -1,0 +1,31 @@
+<!-- Ajouter un sponsor -->
+<div class="modal fade" id="sponsor-modal" tabindex="-1" role="dialog" aria-labelledby="anecdote-add" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="sponsors.php" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+                    <h4 class="modal-title" id="sponsor-add-label">Ajouter un sponsor</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="sponsor-name">Nom:</label>
+                        <input class="form-control" type="text" name="sponsor-name" id="sponsor-name" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsor-website">Adresse du site web:</label>
+                        <input type="url" name="sponsor-website" id="sponsor-website" rows="4" class="form-control" placeholder="http://" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sponsor-image">Logo: </label>
+                        <input type="file" name="sponsor-image" id="sponsor-image" rows="4" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <input type="submit" class="btn btn-primary" value="Ajouter" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

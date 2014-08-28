@@ -1,0 +1,43 @@
+<!-- Ajouter une question -->
+<div class="modal fade" id="question-modal" tabindex="-1" role="dialog" aria-labelledby="question-add" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="quizz.php" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+                    <h4 class="modal-title" id="anecdote-add-label">Ajouter une question</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="question-theme">Thème :</label>
+                        <input class="form-control" type="text" name="question-theme" id="question-theme"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="question-question">Question :</label>
+                        <input type="text" name="question-question" id="question-question" rows="4" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="question-good-answer">Bonne réponse :</label>
+                        <input class="form-control" type="text" name="question-good-answer" id="question-good-answer"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="question-bad-answer-1">Mauvaise réponse #1 :</label>
+                        <input class="form-control" type="text" name="question-bad-answer-1" id="question-bad-answer-1"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="question-bad-answer-2">Mauvaise réponse #2 :</label>
+                        <input class="form-control" type="text" name="question-bad-answer-2" id="question-bad-answer-2"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="question-explanation">Explication :</label>
+                        <input class="form-control" type="text" name="question-explanation" id="question-explanation"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <input type="submit" class="btn btn-primary" value="Ajouter" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

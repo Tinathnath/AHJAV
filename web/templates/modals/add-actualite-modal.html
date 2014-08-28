@@ -1,0 +1,31 @@
+<!-- Ajouter une actualite -->
+<div class="modal fade" id="actualite-modal" tabindex="-1" role="dialog" aria-labelledby="anecdote-add" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="actualites.php" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+                    <h4 class="modal-title" id="anecdote-add-label">Ajouter une actualité</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="actualite-titre">Titre:</label>
+                        <input class="form-control" type="text" name="actualite-titre" id="actualite-titre" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="actualite-texte">Texte:</label>
+                        <textarea name="actualite-texte" id="actualite-texte" rows="4" class="form-control" required="required"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="actualite-image">Image:</label>
+                        <input type="file" name="actualite-image" id="actualite-image" class="form-control"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <input type="submit" class="btn btn-primary" value="Ajouter" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

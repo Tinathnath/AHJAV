@@ -1,0 +1,56 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#ahjav-logo
+{
+    height: 35px;
+    width: auto;
+    display: inline-block;
+    margin-top: -5px;
+}
+
+#ahjav-brand
+{
+    display: inline-block;
+    font-size: 30px;
+}
+
+.main-container
+{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.recap-block
+{
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.recap-block h2
+{
+    text-align: center;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    border-bottom: 1px outset #aaa;
+}
+
+.row
+{
+    margin-top: 10px;
+}
+
+.form-group input[type="submit"]
+{
+    margin-top: 30px;
+}
+
+.dropdown-header, .dropdown-header span
+{
+    color: rgba(75, 75, 75, 0.89);
+}

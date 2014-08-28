@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+Options -Indexes
+RewriteEngine on
+
+RewriteRule ^api/partenaire\/(.*)/promotions api/getPromos.php?id=$1 [L]
+RewriteRule ^api/partenaire(/?)(.*) api/getPartenaires.php?id=$2 [L]
+RewriteRule ^api/vin(/?)(.*) api/getVins.php?id=$2 [L]
+RewriteRule ^api/anecdote(/?)(.*) api/getAnecdotes.php?id=$2 [L]
+RewriteRule ^api/questions(/?) api/getQuestions.php [L]
+RewriteRule ^api/sponsors(/?) api/getSponsors.php [L]
+RewriteRule ^api/actualites(/?) api/getActualites.php [L]
