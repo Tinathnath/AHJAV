@@ -6,7 +6,7 @@
  * Time: 10:52
  */
 //APPLICATION OPTIONS
-define('ENV_MODE', 'production');
+define('ENV_MODE', 'dev');
 
 if(ENV_MODE == 'dev')
 {
