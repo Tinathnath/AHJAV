@@ -19,11 +19,11 @@ if(ENV_MODE == 'dev')
 }
 else if(ENV_MODE == 'production')
 {
-    define('DB_NAME', 'applicatr1');
+    define('DB_NAME', '');
     define('DB_DRIVER', 'mysql');
-    define('DB_HOST', 'mysql51-128.perso');
-    define('DB_USER', 'applicatr1');
-    define('DB_PASSWD', 'ahjavapi1');
+    define('DB_HOST', '');
+    define('DB_USER', '');
+    define('DB_PASSWD', '');
     define('CFG_DB_DSN', DB_DRIVER.'://'.DB_USER.':'.DB_PASSWD.'@'.DB_HOST.'/'.DB_NAME);
 }
 
